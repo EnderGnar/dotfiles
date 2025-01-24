@@ -2,7 +2,7 @@
 
 # Can be run directly from the web with:
 #
-#   `curl --proto '=https' --tlsv1.2 -sSf -L https://raw.githubusercontent.com/EnderGnar/dotfiles/refs/heads/master/scripts/macos-setup.sh | sh -s -- install`
+#   `curl --proto '=https' --tlsv1.2 -sSf -L https://raw.githubusercontent.com/EnderGnar/dotfiles/refs/heads/master/scripts/macos-setup.sh | sh -s`
 #
 
 # Exit the script immediately if a command fails and print commands
