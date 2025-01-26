@@ -24,6 +24,12 @@
           pkgs.obsidian
           pkgs.google-chrome
           pkgs.vscode
+          pkgs.discord
+          pkgs.spotify
+          pkgs.zoom-us
+
+          # Dev
+          pkgs.docker
         ];
 
       # Necessary for using flakes on this system.
@@ -39,16 +45,38 @@
       system.stateVersion = 5;
 
       system.defaults = {
-	dock = {
-	  persistent-apps = [
-	    "${pkgs.obsidian}/Applications/Obsidian.app"
-	    "${pkgs.google-chrome}/Applications/Google Chrome.app"
-	    "${pkgs.vscode}/Applications/Visual Studio Code.app"
-	    "/System/Applications/Calendar.app"
-	    "/System/Applications/System Settings.app"
-	  ];
-	};
-        finder.FXPreferredViewStyle = "clmv";
+        controlcenter.BatteryShowPercentage = true;
+        dock = {
+          persistent-apps = [
+            "/System/Applications/Mail.app"
+            "${pkgs.obsidian}/Applications/Obsidian.app"
+            "${pkgs.google-chrome}/Applications/Google Chrome.app"
+            "${pkgs.vscode}/Applications/Visual Studio Code.app"
+            "${pkgs.spotify}/Applications/Spotify.app"
+            "${pkgs.discord}/Applications/Discord.app"
+            "/System/Applications/Calendar.app"
+            "/System/Applications/System Settings.app"
+          ];
+          persistent-others = [
+            "/Users/${username}/Downloads"
+            "/Users/${username}/Documents"
+          ];
+          tilesize = 48;
+        };
+        finder = {
+          AppleShowAllFiles = true;
+          FXPreferredViewStyle = "clmv";
+          FXDefaultSearchScope = "SCcf";
+        };
+        NSGlobalDomain.AppleInterfaceStyle = "Dark";
+
+        menuExtraClock.ShowSeconds = true;
+        
+        screencapture.target = "clipboard";
+        screensaver = {
+          askForPassword = true;
+          askForPasswordDelay = 0;
+        };
       };
 
       # The platform the configuration will be used on.
