@@ -30,6 +30,7 @@
 
           # Dev
           pkgs.docker
+          pkgs.direnv
         ];
 
       # Necessary for using flakes on this system.
@@ -47,6 +48,7 @@
       system.defaults = {
         controlcenter.BatteryShowPercentage = true;
         dock = {
+          autohide = true;
           persistent-apps = [
             "/System/Applications/Mail.app"
             "${pkgs.obsidian}/Applications/Obsidian.app"
