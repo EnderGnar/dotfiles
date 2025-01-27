@@ -27,6 +27,7 @@
           pkgs.discord
           pkgs.spotify
           pkgs.zoom-us
+          pkgs.rectangle
 
           # Dev
           pkgs.docker
